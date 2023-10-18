@@ -1,0 +1,42 @@
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://jitpack.io" }
+        maven {
+            url System.getenv("MAVEN_VERYFI_URL")
+            credentials {
+                username = System.getenv("MAVEN_VERYFI_USERNAME")
+                password = System.getenv("MAVEN_VERYFI_PASSWORD")
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+dependencyResolutionManagement {
+    //repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenLocal()
+        google()
+        mavenCentral()
+        maven { url "https://plugins.gradle.org/m2/" }
+        maven { url "https://jitpack.io" }
+        maven {
+            url System.getenv("MAVEN_VERYFI_URL")
+            credentials {
+                username = System.getenv("MAVEN_VERYFI_USERNAME")
+                password = System.getenv("MAVEN_VERYFI_PASSWORD")
+            }
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
+rootProject.name = "LensBarcodesDemo"
+include ':app'
