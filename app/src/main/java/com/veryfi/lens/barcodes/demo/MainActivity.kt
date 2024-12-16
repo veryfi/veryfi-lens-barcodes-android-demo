@@ -386,9 +386,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        const val CLIENT_ID = "vrfLkoMAY6XhZRvso0JUVcJDoOmJD4JSzzWhdhr"
-        const val AUTH_USERNAME = "devapitest"
-        const val AUTH_APIKEY = "f339d0936016cb84c7517b26a0932238"
+        const val CLIENT_ID = BuildConfig.CLIENT_ID
+        const val AUTH_USERNAME = BuildConfig.USERNAME
+        const val AUTH_APIKEY = BuildConfig.API_KEY
         const val URL = BuildConfig.URL
     }
 }
