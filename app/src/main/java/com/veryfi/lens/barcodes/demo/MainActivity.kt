@@ -360,7 +360,7 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.externalId = externalId
         veryfiLensSettings.ignoreRemoteSettings = ignoreRemoteSettings
         veryfiLensSettings.dataExtractionEngine = VeryfiLensSettings.ExtractionEngine.VeryfiInApp
-        veryfiLensSettings.documentTypes = arrayListOf(DocumentType.BARCODES)
+        veryfiLensSettings.documentTypes = arrayListOf(DocumentType.BARCODE)
         veryfiLensSettings.showDocumentTypes = true
 
         val veryfiLensCredentials = VeryfiLensCredentials()
