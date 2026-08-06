@@ -64,7 +64,6 @@ class MainActivity : AppCompatActivity() {
     private var boostModeIsOn = veryfiLensSettings.boostModeIsOn
     private var boundingBoxesIsOn = veryfiLensSettings.boundingBoxesIsOn
     private var detectBlurResponseIsOn = veryfiLensSettings.detectBlurResponseIsOn
-    private var isProduction = veryfiLensSettings.isProduction
     private var confidenceDetailsIsOn = veryfiLensSettings.confidenceDetailsIsOn
     private var parseAddressIsOn = veryfiLensSettings.parseAddressIsOn
     private var externalId = veryfiLensSettings.externalId ?: ""
@@ -143,7 +142,6 @@ class MainActivity : AppCompatActivity() {
             switchBoostMode.isChecked = boostModeIsOn
             switchBoundingBoxes.isChecked = boundingBoxesIsOn
             switchDetectBlurResponse.isChecked = detectBlurResponseIsOn
-            switchIsProduction.isChecked = isProduction
             switchConfidenceDetails.isChecked = confidenceDetailsIsOn
             switchParseAddress.isChecked = parseAddressIsOn
             txtExternalId.text = externalId.ifEmpty { getString(R.string.settings_na_value) }
@@ -205,7 +203,6 @@ class MainActivity : AppCompatActivity() {
             switchBoostMode.onChangeListener { boostModeIsOn = it }
             switchBoundingBoxes.onChangeListener { boundingBoxesIsOn = it }
             switchDetectBlurResponse.onChangeListener { detectBlurResponseIsOn = it }
-            switchIsProduction.onChangeListener { isProduction = it }
             switchConfidenceDetails.onChangeListener { confidenceDetailsIsOn = it }
             switchParseAddress.onChangeListener { parseAddressIsOn = it }
             txtExternalId.setOnClickListener {
@@ -353,7 +350,6 @@ class MainActivity : AppCompatActivity() {
         veryfiLensSettings.boostModeIsOn = boostModeIsOn
         veryfiLensSettings.boundingBoxesIsOn = boundingBoxesIsOn
         veryfiLensSettings.detectBlurResponseIsOn = detectBlurResponseIsOn
-        veryfiLensSettings.isProduction = isProduction
         veryfiLensSettings.confidenceDetailsIsOn = confidenceDetailsIsOn
         veryfiLensSettings.parseAddressIsOn = parseAddressIsOn
         veryfiLensSettings.gpuIsOn = gpuIsOn
