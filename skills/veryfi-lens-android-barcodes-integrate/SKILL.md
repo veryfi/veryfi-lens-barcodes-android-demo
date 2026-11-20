@@ -1,6 +1,6 @@
 ---
 name: veryfi-lens-android-barcodes-integrate
-description: "Integrates the Veryfi Lens Android Barcodes SDK (com.veryfi.lens:veryfi-lens-barcodes-sdk:2.7.0.6): Maven setup, on-device VeryfiInApp barcode reading, VeryfiLens.configure, VeryfiLensSettings, delegate callbacks, and showCamera. Use when adding Lens barcode scanning on Android. This is not barcodeExtractionIsOn on a receipt."
+description: "Integrates the Veryfi Lens Android Barcodes SDK (com.veryfi.lens:veryfi-lens-barcodes-sdk:2.7.0.6): Maven setup, on-device VeryfiInApp barcode reading, VeryfiLens.configure, VeryfiLensSettings, delegate callbacks, and showCamera. Use when adding Lens barcode scanning on Android. This is not barcodeExtractionIsOn on a receipt. Covers Lens analytics events and notification subscription (events.md)."
 ---
 
 # Veryfi Lens Android — Barcodes
@@ -81,7 +81,11 @@ Defaults: camera, InApp, gallery off, continuous autofocus on.
 - [implementation.md](implementation.md) — configure, delegate, and launch or camera lifecycle
 - [settings.md](settings.md) — `VeryfiLensSettings` for this product, with Android defaults
 - [callbacks.md](callbacks.md) — delegate payloads
+- [events.md](events.md) — analytics events, metrics, and notification subscription
 - [troubleshooting.md](troubleshooting.md) — symptom, cause, fix
 - [clarifications.md](clarifications.md) — Unconfirmed items, Any-Documents, fraud, field detection
 - [checklist.md](checklist.md) — validation checklist before handing code to the host
 
+## Analytics and metrics
+
+Lens already records interaction events. When the host wants those metrics, subscribe as in [events.md](events.md). Use the event names listed there. Do not invent names. On Android, register `com.veryfi.lens.VeryfiLensSecureAnalyticsEvent`, not the deprecated `com.veryfi.lens.VeryfiLensAnalyticsEvent`. A plugin host calls the plugin observe API instead of registering that broadcast itself.
